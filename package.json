@@ -1,0 +1,28 @@
+{
+  "name": "sistema-de-acompanhamento-de-processos",
+  "version": "1.0.0",
+  "description": "O Sistema de Acompanhamento de Processos (SAP) é um sistema que busca otimizar o trabalho da Coordenação de Compras, Licitações e Contratos do IFBA campus Irecê.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skyrippa/sistema-de-acompanhamento-de-processos.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skyrippa/sistema-de-acompanhamento-de-processos/issues"
+  },
+  "homepage": "https://github.com/skyrippa/sistema-de-acompanhamento-de-processos#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.10"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}

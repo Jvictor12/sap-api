@@ -7,8 +7,8 @@ var servidorSchema = mongoose.Schema({
         required: true
     },
     setor: {
-        type: Schema.Types.ObjectId, 
-        ref: 'setors',
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'setor',
         required: true
     },
     email: {

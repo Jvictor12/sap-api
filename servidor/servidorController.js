@@ -40,62 +40,53 @@ exports.new = function (req, res) {
 
 // Handle view servidor info
 exports.view = function (req, res) {
-    // Servidor.findById(req.params.servidor_id, function (err, servidor) {
-    //     if (err)
-    //         res.send(err);
-    //     res.json({
-    //         message: 'Servidor details loading..',
-    //         data: servidor
-    //     });
-    // });
-    Servidor.
-    findOne({ _id:req.params.servidor_id })
-    .populate('setors')
-    .exec(function (err, servidor) {
-        if (err) {
-            res.json(err);
-        }
-        console.log('setor: ',servidor.setor.nome)
+    Servidor.findById(req.params.servidor_id)
+    .populate('setor')
+    .exec(function(err, servidor) {
+        if (err) console.log(err);
+        console.log(servidor.setor.nome)
         res.json({
-            message: 'Servidor details loading...',
+            message: 'Loading Servidor details...',
             data: servidor
         })
     })
 };
 
 // Handle update setor info
-// exports.update = function (req, res) {
-// Setor.findById(req.params.setor_id, function (err, setor) {
-//         if (err)
-//             res.send(err);
+exports.update = function (req, res) {
+Servidor.findById(req.params.servidor_id, 
+    function (err, servidor) {
+        if (err)
+            res.send(err);
 
-//     setor.nome = req.body.nome ? req.body.nome : setor.nome;
-//     setor.sigla = req.body.sigla;
-//     setor.email = req.body.email;
-//     setor.ramal = req.body.ramal;
+        servidor.nome = req.body.nome ? req.body.nome : servidor.nome;
+        servidor.setor = req.body.setor;
+        servidor.email = req.body.email;
+        servidor.cargo = req.body.cargo;
+        servidor.celular = req.body.celular;
 
-// // save the setor and check for errors
-//         setor.save(function (err) {
-//             if (err)
-//                 res.json(err);
-//             res.json({
-//                 message: 'Setor Info updated',
-//                 data: setor
-//             });
-//         });
-//     });
-// };
+        // save the setor and check for errors
+        servidor.save(function (err) {
+            if (err)
+                res.json(err);
+            res.json({
+                message: 'Servidor Info updated',
+                data: servidor
+            });
+        });
+    });
+};
 
-// Handle delete setor
-// exports.delete = function (req, res) {
-//     Setor.remove({
-//         _id: req.params.setor_id
-//     }, function (err, setor) {
-//         if (err)
-//             res.send(err);
-// res.json({
-//             status: "success",
-//             message: 'Setor deleted'
-//         });
-//     });
-// };
+//Handle delete setor
+exports.delete = function (req, res) {
+    Servidor.deleteOne({
+        _id: req.params.servidor_id
+    }, function (err, servidor) {
+        if (err)
+            res.send(err);
+        res.json({
+            status: "success",
+            message: 'Servidor deleted'
+        });
+    });
+};

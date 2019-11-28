@@ -31,6 +31,7 @@ router.route('/servidores')
 
 router.route('/servidores/:servidor_id')
     .get(servidorController.view)
+    .delete(servidorController.delete);
     
 // Export API routes
 module.exports = router;

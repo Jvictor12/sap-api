@@ -4,7 +4,7 @@ let router = require('express').Router();
 router.get('/', function (req, res) {
     res.json({
         status: 'API Its Working',
-        message: 'Welcome to SAP API crafted with love!',
+        message: 'Welcome to SAP API.',
     });
 });
 // Import controllers
@@ -24,7 +24,13 @@ router.route('/setores/:setor_id')
     .put(setorController.update)
     .delete(setorController.delete);
 
-//
+// Servidores routes
+router.route('/servidores')
+    .get(servidorController.index)
+    .post(servidorController.new)
+
+router.route('/servidores/:servidor_id')
+    .get(servidorController.view)
     
 // Export API routes
 module.exports = router;

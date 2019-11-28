@@ -1,9 +1,14 @@
 var mongoose = require('mongoose');
 
 // Setup schema
-var setorSchema = mongoose.Schema({
+var servidorSchema = mongoose.Schema({
     nome: {
         type: String,
+        required: true
+    },
+    setor: {
+        type: Schema.Types.ObjectId, 
+        ref: 'setors',
         required: true
     },
     email: {
@@ -14,10 +19,6 @@ var setorSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    setor: {
-        type: Number,
-        required: true
-    },
     celular: String,
     create_date: {
         type: Date,
@@ -25,9 +26,9 @@ var setorSchema = mongoose.Schema({
     }
 });
 
-// Export Setor model
-var Setor = module.exports = mongoose.model('setor', setorSchema);
+// Export Servidor model
+var Servidor = module.exports = mongoose.model('servidor', servidorSchema);
 
 module.exports.get = function (callback, limit) {
-    Setor.find(callback).limit(limit);
+    Servidor.find(callback).limit(limit);
 }

@@ -26,11 +26,11 @@ exports.new = function (req, res) {
     setor.email = req.body.email;
     setor.ramal = req.body.ramal;
 
-// save the contact and check for errors
+    // save the contact and check for errors
     setor.save(function (err) {
-        // if (err)
-        //     res.json(err);
-res.json({
+        if (err)
+            res.json(err);
+        res.json({
             message: 'New setor created!',
             data: setor
         });
@@ -51,7 +51,8 @@ exports.view = function (req, res) {
 
 // Handle update setor info
 exports.update = function (req, res) {
-Setor.findById(req.params.setor_id, function (err, setor) {
+Setor.findById(req.params.setor_id, 
+    function (err, setor) {
         if (err)
             res.send(err);
 
@@ -74,12 +75,12 @@ Setor.findById(req.params.setor_id, function (err, setor) {
 
 // Handle delete setor
 exports.delete = function (req, res) {
-    Setor.remove({
+    Setor.deleteOne({
         _id: req.params.setor_id
     }, function (err, setor) {
         if (err)
             res.send(err);
-res.json({
+        res.json({
             status: "success",
             message: 'Setor deleted'
         });

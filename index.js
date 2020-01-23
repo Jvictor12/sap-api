@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 // mongoose.connect(uri, {
 // 	useNewUrlParser: true
 // }).catch(error => console.log(error));
-mongoose.connect('mongodb+srv://iago:u98eZ.yYXDjVt@N@iago-wade7.mongodb.net/test?retryWrites=true&w=majority', 
+mongoose.connect('config do banco de dados', 
 	{dbName: 'sap', useNewUrlParser: true})
 	.catch(error => console.log(error));
 var db = mongoose.connection;

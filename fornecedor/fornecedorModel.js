@@ -32,6 +32,7 @@ var fornecedorSchema = mongoose.Schema({
     },
     listaNegra: {
         type: Boolean,
+        default: false,
         required: true
     },
     create_date: {

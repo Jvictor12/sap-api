@@ -52,81 +52,75 @@ var aquisicaoSchema = mongoose.Schema({
             required: true
         }
     ],
-    itensSolicitados: {
-        type: Array,
-        itens: [{
-            nome: {
-                type: String,
-                required: true
-            },
-            adquirido: {
-                type: Boolean,
-                required: true
-            },
-            unidade: {
-                type: String,
-                required: true
-            },
-            quantidade: {
-                type: Number,
-                required: true
-            },
-            valorUnitario: {
-                type: Number,
-                required: true
-            },
-            valorTotal: {
-                type: Number,
-                required: true
-            },
-            catmat_catser: {
-                type: String,
-                required: true
-            }
-        }]
-    },
-    // dados primeira edicao - fornecedores vencedores e itens aprovados para fornecimento
-    fornecedoresVencedores: {
-        type: Array,
-        fornecedores: [{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'fornecedor',
+    itensSolicitados: [{
+        nome: {
+            type: String,
             required: true
-        }]
-    },
-    itensAprovados: {
-        type: Array,
-        itens: [{
-            nome: {
-                type: String,
-                required: true
-            },
-            adquirido: {
-                type: Boolean,
-                required: true
-            },
-            unidade: {
-                type: String,
-                required: true
-            },
-            quantidade: {
-                type: Number,
-                required: true
-            },
-            valorUnitario: {
-                type: Number,
-                required: true
-            },
-            valorTotal: {
-                type: Number,
-                required: true
-            },
-            catmat_catser: {
-                type: String,
-                required: true
-            }
-        }]
-    },
+        },
+        adquirido: {
+            type: Boolean,
+            default: false,
+            required: true
+        },
+        unidade: {
+            type: String,
+            required: true
+        },
+        quantidade: {
+            type: Number,
+            required: true
+        },
+        valorUnitario: {
+            type: Number,
+            required: true
+        },
+        valorTotal: {
+            type: Number,
+            required: true
+        },
+        catmat_catser: {
+            type: String,
+            required: true
+        }
+    }],
+    // dados primeira edicao - fornecedores vencedores e itens aprovados para fornecimento
+    // fornecedoresVencedores: [
+    //     {
+    //         type: mongoose.Schema.Types.ObjectId,
+    //         ref: 'fornecedor',
+    //         required: true
+    //     }
+    // ],
+    // itensAprovados: [{
+    //     nome: {
+    //         type: String,
+    //         required: true
+    //     },
+    //     adquirido: {
+    //         type: Boolean,
+    //         required: true
+    //     },
+    //     unidade: {
+    //         type: String,
+    //         required: true
+    //     },
+    //     quantidade: {
+    //         type: Number,
+    //         required: true
+    //     },
+    //     valorUnitario: {
+    //         type: Number,
+    //         required: true
+    //     },
+    //     valorTotal: {
+    //         type: Number,
+    //         required: true
+    //     },
+    //     catmat_catser: {
+    //         type: String,
+    //         required: true
+    //     }
+    // }],
 });
 
 // Export Aquisicao model

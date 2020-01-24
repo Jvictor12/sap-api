@@ -1,0 +1,40 @@
+criar rotas específicas para cada etapa da aquisicao
+
+cadastros e updates com json
+
+add rota para update geral de aquisições
+
+
+{
+	"numAquisicao": "01/20",
+	"etapa": 1,
+	"solicitante": "5de6776db5580a0c0f239556",
+	"nProcessoSEI": "01",
+	"objeto": "Objeto 1",
+	"modalidade": "Modalidade 1",
+	"valorTotal": 1000.00,
+	"tipo": "Compra",
+	"orcamento": "Investimento",
+	"fornecedores": [
+		{"_id": "5de6768eb5580a0c0f239555"},
+		{"_id": "5e2a494e15267a2edcc0a9be"}
+	],
+	"itensSolicitados": [
+		{
+			"nome": "lápis",
+			"unidade": "unidade",
+			"quantidade": 300,
+			"valorUnitario": 2,
+			"valorTotal": 600,
+			"catmat_catser": "catmat"
+		},
+		{
+			"nome": "caneta",
+			"unidade": "unidade",
+			"quantidade": 100,
+			"valorUnitario": 4,
+			"valorTotal": 400,
+			"catmat_catser": "catmat"
+		}
+	]
+}

@@ -17,33 +17,21 @@ exports.index = function (req, res) {
 };
 
 exports.new = function (req, res) {
-    var aquisicao = new Aquisicao();
-    console.log('antes',quisicao);
-    aquisicao.etapa = 1;
-    aquisicao.numAquisicao = req.body.numAquisicao;
-    aquisicao.solicitante = req.body.solicitante;
-    aquisicao.nProcessoSEI = req.body.nProcessoSEI;
-    aquisicao.objeto = req.body.objeto;
-    aquisicao.modalidade = req.body.modalidade;
-    aquisicao.valorTotal = req.body.valorTotal;
-    aquisicao.tipo = req.body.tipo;
-    aquisicao.orcamento = req.body.orcamento;
-    aquisicao.fornecedores = req.body.fornecedores;
-    //aquisicao.itensSolicitados = req.body.itensSolicitados;
-    console.log('depois',quisicao);
-    // aquisicao.save(function (err) {
-    //     if (err)
-    //         res.json(err);
-    //     res.json({
-    //         message: 'New aquisicao created!',
-    //         data: aquisicao
-    //     });
-    // });
+    var aquisicao = new Aquisicao(req.body);
+    
+    aquisicao.save(function (err) {
+        if (err)
+            res.json(err);
+        res.json({
+            message: 'New aquisicao created!',
+            data: aquisicao
+        });
+    });
 };
 
 exports.view = function (req, res) {
     Aquisicao.findById(req.params.aquisicao_id)
-    .populate('fornecedores.fornecedor')
+    .populate('fornecedores')
     .exec(function(err, aquisicao) {
         if (err) res.send(err);
         console.log(aquisicao)
@@ -62,15 +50,8 @@ Aquisicao.findById(req.params.aquisicao_id,
             res.send(err);
         }
 
-        const novaAquisicao = {};
+        // add operação de sobrescrever dados
 
-        // switch para verificar qual a etapa do processo
-        switch(aquisicao.etapa) {
-            case 1:
-                novaAquisicao = update1(aquisicao, req.body);
-                break;
-        }
-        aquisicao = { ...aquisicao, ...novaAquisicao};
         aquisicao.save(function (err) {
             if  (err) 
                 res.json(err);
@@ -81,16 +62,6 @@ Aquisicao.findById(req.params.aquisicao_id,
         });
     });
 };
-
-// update da primeira edição, para add fornecedor vencedor e itens aprovados para fornecimento
-function update1(dadosAquisicao, novosDados) {
-    const aquisicao = {};
-    aquisicao = { ...dadosAquisicao };
-    aquisicao.fornecedoresVencedores = novosDados.fornecedoresVencedores;
-    aquisicao.itensAprovados = novosDados.itensAprovados;
-
-    return aquisicao;
-}
 
 // Handle update setor info
 // devo permitir atualização dos dados da aquisição?

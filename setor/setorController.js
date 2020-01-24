@@ -20,13 +20,9 @@ exports.index = function (req, res) {
 
 // Handle create setor actions
 exports.new = function (req, res) {
-    var setor = new Setor();
-    setor.nome = req.body.nome ? req.body.nome : setor.nome;
-    setor.sigla = req.body.sigla;
-    setor.email = req.body.email;
-    setor.ramal = req.body.ramal;
+    var setor = new Setor(req.body);
 
-    // save the contact and check for errors
+    // save the setor and check for errors
     setor.save(function (err) {
         if (err)
             res.json(err);
@@ -42,7 +38,7 @@ exports.view = function (req, res) {
     Setor.findById(req.params.setor_id, function (err, setor) {
         if (err)
             res.send(err);
-    
+        
         res.json({
             message: 'Setor details loading..',
             data: setor
@@ -63,14 +59,14 @@ Setor.findById(req.params.setor_id,
     setor.ramal = req.body.ramal;
 
 // save the setor and check for errors
-        setor.save(function (err) {
-            if (err)
-                res.json(err);
-            res.json({
-                message: 'Setor Info updated',
-                data: setor
-            });
+    setor.save(function (err) {
+        if (err)
+            res.json(err);
+        res.json({
+            message: 'Setor Info updated',
+            data: setor
         });
+    });
     });
 };
 

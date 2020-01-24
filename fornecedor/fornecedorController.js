@@ -20,15 +20,7 @@ exports.index = function (req, res) {
 
 // Handle create fornecedor actions
 exports.new = function (req, res) {
-    var fornecedor = new Fornecedor();
-    fornecedor.razaoSocial = req.body.razaoSocial ? req.body.razaoSocial : setor.razaoSocial;
-    fornecedor.nomeFantasia = req.body.nomeFantasia;
-    fornecedor.cnpj = req.body.cnpj;
-    fornecedor.cidadeEstado = req.body.cidadeEstado;
-    fornecedor.telefone = req.body.telefone;
-    fornecedor.email = req.body.email;
-    fornecedor.responsavel = req.body.responsavel;
-    fornecedor.listaNegra = req.body.listaNegra;
+    var fornecedor = new Fornecedor(req.body);
 
     // save the fornecedor and check for errors
     fornecedor.save(function (err) {

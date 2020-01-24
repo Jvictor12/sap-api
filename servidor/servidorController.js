@@ -20,12 +20,7 @@ exports.index = function (req, res) {
 
 // Handle create servidor actions
 exports.new = function (req, res) {
-    var servidor = new Servidor();
-    servidor.nome = req.body.nome ? req.body.nome : servidor.nome;
-    servidor.setor = req.body.setor;
-    servidor.email = req.body.email;
-    servidor.cargo = req.body.cargo;
-    servidor.celular = req.body.celular;
+    var servidor = new Servidor(req.body);
 
 // save the servidor and check for errors
     servidor.save(function (err) {

@@ -25,9 +25,6 @@ mongoose.connect('config do banco de dados',
 	{dbName: 'sap', useNewUrlParser: true})
 	.catch(error => console.log(error));
 var db = mongoose.connection;
-//mongorestore --host iago-shard-0/iago-shard-00-00-wade7.mongodb.net:27017,
-//iago-shard-00-01-wade7.mongodb.net:27017,
-//iago-shard-00-02-wade7.mongodb.net:27017 --ssl --username iago --password u98eZ.yYXDjVt --authenticationDatabase admin 
 
 // Added check for DB connection
 if (!db) {

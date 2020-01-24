@@ -44,7 +44,7 @@ exports.view = function (req, res) {
     .populate('setor')
     .exec(function(err, servidor) {
         if (err) console.log(err);
-        console.log(servidor.setor.nome)
+        //console.log(servidor.setor.nome)
         res.json({
             message: 'Loading Servidor details...',
             data: servidor

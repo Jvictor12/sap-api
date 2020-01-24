@@ -15,19 +15,10 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-// mongoose.connect('mongodb://localhost/sap', {
-// 	useNewUrlParser: true
-// });
-// mongoose.connect(uri, {
-// 	useNewUrlParser: true
-// }).catch(error => console.log(error));
 mongoose.connect('mongodb+srv://iago:u98eZ.yYXDjVt@N@iago-wade7.mongodb.net/test?retryWrites=true&w=majority', 
 	{dbName: 'sap', useNewUrlParser: true})
 	.catch(error => console.log(error));
 var db = mongoose.connection;
-//mongorestore --host iago-shard-0/iago-shard-00-00-wade7.mongodb.net:27017,
-//iago-shard-00-01-wade7.mongodb.net:27017,
-//iago-shard-00-02-wade7.mongodb.net:27017 --ssl --username iago --password u98eZ.yYXDjVt --authenticationDatabase admin 
 
 // Added check for DB connection
 if (!db) {

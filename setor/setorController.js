@@ -42,6 +42,7 @@ exports.view = function (req, res) {
     Setor.findById(req.params.setor_id, function (err, setor) {
         if (err)
             res.send(err);
+    
         res.json({
             message: 'Setor details loading..',
             data: setor
@@ -55,7 +56,7 @@ Setor.findById(req.params.setor_id,
     function (err, setor) {
         if (err)
             res.send(err);
-
+    
     setor.nome = req.body.nome ? req.body.nome : setor.nome;
     setor.sigla = req.body.sigla;
     setor.email = req.body.email;

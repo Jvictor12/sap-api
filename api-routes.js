@@ -11,6 +11,7 @@ router.get('/', function (req, res) {
 var setorController = require('./setor/setorController');
 var servidorController = require('./servidor/servidorController');
 var fornecedorController = require('./fornecedor/fornecedorController');
+var aquisicaoController = require('./aquisicao/aquisicaoController');
 
 // ROUTES -------------------------------------------------
 
@@ -46,6 +47,17 @@ router.route('/fornecedores/:fornecedor_id')
     .patch(fornecedorController.update)
     .put(fornecedorController.update)
     .delete(fornecedorController.delete);
+
+// Rotas Aquisição
+router.route('/aquisicoes')
+    .get(aquisicaoController.index)
+    .post(aquisicaoController.new);
+
+router.route('/aquisicoes/:aquisicao_id')
+    .get(aquisicaoController.view)
+    .patch(aquisicaoController.update)
+    .put(aquisicaoController.update)
+    .delete(aquisicaoController.delete);
     
 // Export API routes
 module.exports = router;

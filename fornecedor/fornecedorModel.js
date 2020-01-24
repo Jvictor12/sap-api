@@ -40,7 +40,7 @@ var fornecedorSchema = mongoose.Schema({
     }
 });
 
-// Export Setor model
+// Export Fornecedor model
 var Fornecedor = module.exports = mongoose.model('fornecedor', fornecedorSchema);
 
 module.exports.get = function (callback, limit) {

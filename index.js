@@ -1,5 +1,7 @@
 // Import express
 let express = require('express')
+// import path
+const path = require('path');
 // Import Body parser
 let bodyParser = require('body-parser');
 // Import Mongoose
@@ -41,7 +43,7 @@ app.use(function(req, res, next) {
 var port = process.env.PORT || 8080;
 
 // Send message for default URL
-app.get('/', (req,res) => res.send('Hello World from SAP API'));
+app.get('/', (req,res) => res.sendFile(path.join(__dirname+'/index.html')));
 
 // Use Api routes in the App
 app.use('/api', apiRoutes)

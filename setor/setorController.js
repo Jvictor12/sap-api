@@ -12,7 +12,7 @@ exports.index = function (req, res) {
         }
         res.json({
             status: "success",
-            message: "Setores retrieved successfully",
+            message: "Setores retornados com sucesso",
             data: setores
         });
     });
@@ -27,7 +27,7 @@ exports.new = function (req, res) {
         if (err)
             res.json(err);
         res.json({
-            message: 'New setor created!',
+            message: 'Novo setor criado!',
             data: setor
         });
     });
@@ -40,7 +40,7 @@ exports.view = function (req, res) {
             res.send(err);
         
         res.json({
-            message: 'Setor details loading..',
+            message: 'Detalhes do setor carregando...',
             data: setor
         });
     });
@@ -63,7 +63,7 @@ Setor.findById(req.params.setor_id,
         if (err)
             res.json(err);
         res.json({
-            message: 'Setor Info updated',
+            message: 'Setor atualizado',
             data: setor
         });
     });
@@ -79,7 +79,7 @@ exports.delete = function (req, res) {
             res.send(err);
         res.json({
             status: "success",
-            message: 'Setor deleted'
+            message: 'Setor removido'
         });
     });
 };

@@ -12,7 +12,7 @@ exports.index = function (req, res) {
         }
         res.json({
             status: "success",
-            message: "Servidores retrieved successfully",
+            message: "Servidores retornados com sucesso",
             data: servidores
         });
     });
@@ -27,7 +27,7 @@ exports.new = function (req, res) {
         // if (err)
         //     res.json(err);
         res.json({
-            message: 'New servidor created!',
+            message: 'Novo servidor criado!',
             data: servidor
         });
     });
@@ -41,7 +41,7 @@ exports.view = function (req, res) {
         if (err) console.log(err);
         //console.log(servidor.setor.nome)
         res.json({
-            message: 'Loading Servidor details...',
+            message: 'Carregando detalhes do servidor...',
             data: servidor
         })
     })
@@ -65,7 +65,7 @@ Servidor.findById(req.params.servidor_id,
             if (err)
                 res.json(err);
             res.json({
-                message: 'Servidor Info updated',
+                message: 'Servidor atualizado!',
                 data: servidor
             });
         });
@@ -81,7 +81,7 @@ exports.delete = function (req, res) {
             res.send(err);
         res.json({
             status: "success",
-            message: 'Servidor deleted'
+            message: 'Servidor removido'
         });
     });
 };

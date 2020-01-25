@@ -12,7 +12,7 @@ exports.index = function (req, res) {
         }
         res.json({
             status: "success",
-            message: "Fornecedores retrieved successfully",
+            message: "Fornecedores retornados com sucesso",
             data: fornecedores
         });
     });
@@ -27,7 +27,7 @@ exports.new = function (req, res) {
         if (err)
             res.json(err);
         res.json({
-            message: 'New fornecedor created!',
+            message: 'Novo fornecedor criado!',
             data: fornecedor
         });
     });
@@ -40,7 +40,7 @@ exports.view = function (req, res) {
             if (err)
                 res.send(err);
             res.json({
-                message: 'Fornecedor details loading..',
+                message: 'Detalhes do fornecedor carregando...',
                 data: fornecedor
             });
         }
@@ -68,7 +68,7 @@ exports.update = function (req, res) {
                 if (err)
                     res.json(err);
                 res.json({
-                    message: 'Fornecedor Info updated',
+                    message: 'Fornecedor atualizado!',
                     data: fornecedor
                 });
             });
@@ -86,7 +86,7 @@ Fornecedor.findById(req.params.fornecedor_id,
             if (err)
                 res.json(err);
             res.json({
-                message: 'Fornecedor info updated',
+                message: 'Fornecedor atualizado!',
                 data: fornecedor
             });
         });
@@ -101,7 +101,7 @@ exports.delete = function (req, res) {
                 res.send(err);
             res.json({
                 status: "success",
-                message: 'Fornecedor deleted'
+                message: 'Fornecedor removido'
             });
         }
     );

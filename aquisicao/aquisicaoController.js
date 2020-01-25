@@ -10,7 +10,7 @@ exports.index = function (req, res) {
         }
         res.json({
             status: "success",
-            message: "Aquisicoes retrieved successfully",
+            message: "Aquisicoes retornadas com sucesso!",
             data: aquisicoes
         });
     });
@@ -23,7 +23,7 @@ exports.new = function (req, res) {
         if (err)
             res.json(err);
         res.json({
-            message: 'New aquisicao created!',
+            message: 'Nova aquisição criada!',
             data: aquisicao
         });
     });
@@ -65,7 +65,7 @@ Aquisicao.findById(req.params.aquisicao_id,
             if  (err) 
                 res.json(err);
             res.json({
-                message: 'Aquisicao Info updated',
+                message: 'Aquisicao atualizada!',
                 data: aquisicao,
             });
         });
@@ -92,7 +92,7 @@ Aquisicao.findById(req.params.aquisicao_id,
         aquisicao.save(function(err) {
             if (err) res.json(err);
             res.json({
-                message: 'Aquisicao atualizada para etapa 2',
+                message: 'Aquisicao aprovada!',
                 data: aquisicao,
             })
         })
@@ -114,7 +114,7 @@ Aquisicao.findById(req.params.aquisicao_id,
         aquisicao.save(function(err) {
             if (err) res.json(err);
             res.json({
-                message: 'Aquisicao atualizada para etapa 3',
+                message: 'Empenhos adicionados com sucesso!',
                 data: aquisicao,
             })
         })
@@ -142,7 +142,7 @@ Aquisicao.findById(req.params.aquisicao_id,
     aquisicao.save(function(err) {
         if (err) res.json(err);
         res.json({
-            message: 'Aquisicao atualizada para etapa 4',
+            message: 'Entrega de itens confirmada!',
             data: aquisicao,
         });
     });
@@ -161,7 +161,7 @@ Aquisicao.findById(req.params.aquisicao_id,
     aquisicao.save(function(err) {
         if (err) res.json(err);
         res.json({
-            message: 'Aquisicao atualizada para etapa 5',
+            message: 'Pagamento adicionado!',
             data: aquisicao,
         });
     });
@@ -177,7 +177,7 @@ exports.delete = function (req, res) {
             res.send(err);
         res.json({
             status: "success",
-            message: 'Aquisicao deleted'
+            message: 'Aquisicao removida'
         });
     });
 };

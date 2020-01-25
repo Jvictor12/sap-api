@@ -12,31 +12,38 @@
 			<h2>Rotas</h2>
 			<hr>
 
+			<!-- tabela rotas principais -->
 			<div class="entidade">
 				<h4>ROTAS PRINCIPAIS</h4>
 				<table>
 					<tr>
 				    <th>Tipo de requisição</th>
 				    <th>Caminho</th>
+				    <th>Atributos retornados/necessários (tipo de dado)</th>
 				  </tr>
 				  <tr>
 				    <td>Documentação</td>
 				    <td><a href="https://damp-tundra-82992.herokuapp.com/">https://damp-tundra-82992.herokuapp.com/</a></td>
+				    <td class="atributos">-</td>
 				  </tr>
 				  <tr>
 				    <td>API</td>
 				    <td><a href="https://damp-tundra-82992.herokuapp.com/api" target="blank">/api</a></td>
+				    <td class="atributos">status (string), message (string)</td>
 				  </tr>
 				</table>
 			</div>
 
+
+			<!-- tabela setores -->
 			<div class="entidade">
 				<hr>
 				<h4>ROTAS SETORES</h4>
-				<table>
+				<table class="atributos">
 					<tr>
 				    <th>Tipo de requisição</th>
 				    <th>Caminho</th>
+				    <th>Atributos retornados/necessários (tipo de dado)</th>
 				  </tr>
 				  <!-- Rotas gerais -->
 				  <tr>
@@ -44,38 +51,59 @@
 				    <td><a href="https://damp-tundra-82992.herokuapp.com/api/setores" target="blank">
 				    	/setores
 				    </a></td>
+				    <td>
+				    	<p>status (string), message (string), data (array de objetos),</p>
+				    	<p>
+				    		<b>atributos dos objetos contidos em 'data':</b> _id (ObjectId, conversível para string), nome (string), email (string), ramal (number), sigla (string), create_date (date)
+				    	</p>
+				    </td>
 				  </tr>
+
 				  <tr>
 				    <td>POST setor</td>
 				    <td><a href="">/setores</a></td>
+				    <td>nome (string), email (string), ramal (string), sigla (string)</td>
 				  </tr>
+
 				  <!-- Rotas específicas -->
 				  <tr>
 				    <td>GET setor</td>
 				    <td><a href="">/setores/:setor_id</a></td>
+				    <td>
+				    	<p>message (string), data (objeto)</p>
+				    	<p><b>atributos do objeto 'data':</b>
+				    		_id (ObjectId, conversível para string), nome (string), email (string), ramal (number), sigla (string), create_date (date)
+				    	</p>
+				    </td>
 				  </tr>
+
 				  <tr>
 				    <td>PUT setor</td>
 				    <td><a href="">/setores/:setor_id</a></td>
+				    <td>nome (string), email (string), ramal (string), sigla (string)</td>
 				  </tr>
 				  <tr>
 				    <td>PATCH setor</td>
 				    <td><a href="">/setores/:setor_id</a></td>
+				    <td>nome (string), email (string), ramal (string), sigla (string)</td>
 				  </tr>
 				  <tr>
 				    <td>DELETE setor</td>
 				    <td><a href="">/setores/:setor_id</a></td>
+				    <td>-</td>
 				  </tr>
 				</table>
 			</div>
 
+			<!-- tabela servidores -->
 			<div class="entidade">
 				<hr>
 				<h4>ROTAS SERVIDORES</h4>
-				<table>
+				<table class="atributos">
 					<tr>
 				    <th>Tipo de requisição</th>
 				    <th>Caminho</th>
+				    <th>Atributos retornados/necessários (tipo de dado)</th>
 				  </tr>
 				  <!-- Rotas gerais -->
 				  <tr>
@@ -83,38 +111,63 @@
 				    <td><a href="https://damp-tundra-82992.herokuapp.com/api/servidores" target="blank">
 				    	/servidores
 				    </a></td>
+				    <td>
+				    	<p>status (string), message (string), data (array de objetos),</p>
+				    	<p>
+				    		<b>atributos dos objetos contidos em 'data':</b> _id (ObjectId, conversível para string), nome (string),
+				    		setor (ObjectId), email (string), cargo (string), celular (string), create_date (date)
+				    	</p>
+				    </td>
 				  </tr>
 				  <tr>
 				    <td>POST servidor</td>
 				    <td><a href="">/servidores</a></td>
+				    <td>
+				    		nome (string), setor (ObjectId), email (string), cargo (string), celular (string)
+				    </td>
 				  </tr>
 				  <!-- Rotas específicas -->
 				  <tr>
 				    <td>GET servidor</td>
 				    <td><a href="">/servidores/:servidor_id</a></td>
+				    <td>
+				    	<p>message (string), data (objeto)</p>
+				    	<p><b>atributos do objeto 'data':</b>
+				    		_id (ObjectId), nome (string), setor (ObjectId), email (string), cargo (string), celular (string), create_date (date)
+				    	</p>
+				    </td>
 				  </tr>
 				  <tr>
 				    <td>PUT servidor</td>
 				    <td><a href="">/servidores/:servidor_id</a></td>
+				    <td>
+				    		_id (ObjectId), nome (string), setor (ObjectId), email (string), cargo (string), celular (string), create_date (date)
+				    </td>
 				  </tr>
 				  <tr>
 				    <td>PATCH servidor</td>
 				    <td><a href="">/servidores/:servidor_id</a></td>
+				    <td>
+				    		_id (ObjectId), nome (string), setor (ObjectId), email (string), cargo (string), celular (string), create_date (date)
+				    </td>
 				  </tr>
 				  <tr>
 				    <td>DELETE servidor</td>
 				    <td><a href="">/servidores/:servidor_id</a></td>
+				    <td>-</td>
 				  </tr>
 				</table>
 			</div>
 
+			<!-- tabela fornecedores -->
 			<div class="entidade">
 				<hr>
 				<h4>ROTAS FORNECEDORES</h4>
-				<table>
+				<table class="atributos">
 					<tr>
 				    <th>Tipo de requisição</th>
 				    <th>Caminho</th>
+				    <th>Atributos retornados/necessários (tipo de dado)</th>
 				  </tr>
 				  <!-- Rotas gerais -->
 				  <tr>
@@ -122,38 +175,63 @@
 				    <td><a href="https://damp-tundra-82992.herokuapp.com/api/fornecedores" target="blank">
 				    	/fornecedores
 				    </a></td>
+				    <td>
+				    	<p>status (string), message (string), data (array de objetos),</p>
+				    	<p>
+				    		<b>atributos dos objetos contidos em 'data':</b> _id (ObjectId, conversível para string), listaNegra (boolean), create_date (date), razaoSocial (string), nomeFantasia (string), cnpj (string), cidadeEstado (string), telefone (string), email (string), responsavel (string)
+				    	</p>
+				    </td>
 				  </tr>
 				  <tr>
 				    <td>POST fornecedor</td>
 				    <td><a href="">/fornecedores</a></td>
+				    <td>
+				    	razaoSocial (string), nomeFantasia (string), cnpj (string), cidadeEstado (string), telefone (string), email (string), responsavel (string)
+				    </td>
 				  </tr>
 				  <!-- Rotas específicas -->
 				  <tr>
 				    <td>GET fornecedor</td>
 				    <td><a href="">/fornecedores/:fornecedor_id</a></td>
+				    <td>
+				    	<p>message (string), data (objeto),</p>
+				    	<p>
+				    		<b>atributos do objeto 'data':</b> 
+				    		_id (ObjectId, conversível para string), listaNegra (boolean), create_date (date), razaoSocial (string), nomeFantasia (string), cnpj (string), cidadeEstado (string), telefone (string), email (string), responsavel (string)
+				    	</p>
+				    </td>
 				  </tr>
 				  <tr>
 				    <td>PUT fornecedor</td>
 				    <td><a href="">/fornecedores/:fornecedor_id</a></td>
+				    <td>
+				    	razaoSocial (string), nomeFantasia (string), cnpj (string), cidadeEstado (string), telefone (string), email (string), responsavel (string)
+				    </td>
 				  </tr>
 				  <tr>
 				    <td>PATCH fornecedor</td>
 				    <td><a href="">/fornecedores/:fornecedor_id</a></td>
+				    <td>
+				    	razaoSocial (string), nomeFantasia (string), cnpj (string), cidadeEstado (string), telefone (string), email (string), responsavel (string)
+				    </td>
 				  </tr>
 				  <tr>
 				    <td>DELETE fornecedor</td>
 				    <td><a href="">/fornecedores/:fornecedor_id</a></td>
+				    <td>-</td>
 				  </tr>
 				</table>
 			</div>
 
+			<!-- tabela aquisições -->
 			<div class="entidade">
 				<hr>
 				<h4>ROTAS AQUISIÇÕES</h4>
-				<table>
+				<table class="atributos">
 					<tr>
 				    <th>Tipo de requisição</th>
 				    <th>Caminho</th>
+				    <th>Atributos retornados/necessários (tipo de dado)</th>
 				  </tr>
 				  <!-- Rotas gerais -->
 				  <tr>
@@ -161,27 +239,95 @@
 				    <td><a href="https://damp-tundra-82992.herokuapp.com/api/aquisicoes" target="blank">
 				    	/aquisições
 				    </a></td>
+				    <td>
+				    	<p>status (string), message (string), data (array de objetos),</p>
+				    	<p>
+				    		<b>atributos dos objetos contidos em 'data':</b> _id (ObjectId, conversível para string), numAquisicao (string), etapa (number), solicitante (ObjectId), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), dataAbertura (date), dataEntregaItens (date), fornecedores (array de ObjectIds), fornecedoresVencedores (array de ObjectIds), itens (array de objetos), empenhos (array de objetos), pagamentos (array de objetos)
+				    	</p>
+				    	<p><b>atributos dos objetos contidos em 'itens': </b>
+				    		_id (ObjectId), adquirido (boolean), aprovado (boolean), nome (string), unidade (string), quantidade (number), valorUnitario (number), valorTotal (number), catmat_catser (string)
+				    	</p>
+				    	<p><b>atributos dos objetos contidos em 'empenhos': </b>
+				    		_id (ObjectId), create_date (date), numero (int), fornecedor (ObjectId), valor (number), itens (array de ObjectIds)
+				    	</p>
+				    	<p><b>atributos dos objetos contidos em 'pagamentos': </b>
+				    		_id (ObjectId), dataEnvioPagamento (date), dataPagamento (date), numeroOB (string), numNotaFiscal (string)
+				    	</p>
+				    </td>
 				  </tr>
 				  <tr>
 				    <td>POST aquisicao</td>
 				    <td><a href="">/aquisicoes</a></td>
+				    <td>
+				    	<p>solicitante (ObjectId), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), fornecedores (array de objetos), itens (array de objetos)
+				    	</p>
+				    	<p><b>atributos dos objetos contidos em 'fornecedores': </b>
+				    		_id (ObjectId)</p>
+				    	<p><b>atributos dos objetos contidos em 'itens': </b>
+				    		nome (string), unidade (string), quantidade (number), valorUnitario (number), valorTotal(number), catmat_catser (string)
+				    	</p>
+				    </td>
 				  </tr>
 				  <!-- Rotas específicas -->
 				  <tr>
 				    <td>GET aquisicao</td>
 				    <td><a href="">/aquisicoes/:aquisicao_id</a></td>
+				    <td>
+				    	<p>message (string), data (objeto)</p>
+				    		<p><b>atributos do objeto 'data':</b>
+					    		_id (ObjectId, conversível para string), numAquisicao (string), etapa (number), solicitante (ObjectId), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), dataAbertura (date), dataEntregaItens (date), fornecedores (array de ObjectIds), fornecedoresVencedores (array de ObjectIds), itens (array de objetos), empenhos (array de objetos), pagamentos (array de objetos)
+					    	</p>
+					    	<p><b>atributos dos objetos contidos em 'itens': </b>
+				    			_id (ObjectId), adquirido (boolean), aprovado (boolean), nome (string), unidade (string), quantidade (number), valorUnitario (number), valorTotal (number), catmat_catser (string)
+				    		</p>
+				    		<p><b>atributos dos objetos contidos em 'empenhos': </b>
+				    			_id (ObjectId), create_date (date), numero (int), fornecedor (ObjectId), valor (number), itens (array de ObjectIds)
+				    		</p>
+				    		<p><b>atributos dos objetos contidos em 'pagamentos': </b>
+				    			_id (ObjectId), dataEnvioPagamento (date), dataPagamento (date), numeroOB (string), numNotaFiscal (string)
+				    		</p>
+					  </td>
 				  </tr>
 				  <tr>
 				    <td>PUT aquisicao</td>
 				    <td><a href="">/aquisicoes/:aquisicao_id</a></td>
+				    <td>
+			    		<p>
+				    		solicitante (ObjectId), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), dataAbertura (date), dataEntregaItens (date), fornecedores (array de ObjectIds), fornecedoresVencedores (array de ObjectIds), itens (array de objetos), empenhos (array de objetos), pagamentos (array de objetos)
+				    	</p>
+				    	<p><b>atributos dos objetos contidos em 'itens': </b>
+			    			adquirido (boolean), aprovado (boolean), nome (string), unidade (string), quantidade (number), valorUnitario (number), valorTotal (number), catmat_catser (string)
+			    		</p>
+			    		<p><b>atributos dos objetos contidos em 'empenhos': </b>
+			    			numero (int), fornecedor (ObjectId), valor (number), itens (array de ObjectIds)
+			    		</p>
+			    		<p><b>atributos dos objetos contidos em 'pagamentos': </b>
+			    			dataEnvioPagamento (date), dataPagamento (date), numeroOB (string), numNotaFiscal (string)
+			    		</p>
+					  </td>
 				  </tr>
 				  <tr>
 				    <td>PATCH aquisicao</td>
 				    <td><a href="">/aquisicoes/:aquisicao_id</a></td>
+				    <td>
+			    		<p>
+				    		etapa (number), solicitante (ObjectId), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), dataAbertura (date), dataEntregaItens (date), fornecedores (array de ObjectIds), fornecedoresVencedores (array de ObjectIds), itens (array de objetos), empenhos (array de objetos), pagamentos (array de objetos)
+				    	</p>
+				    	<p><b>atributos dos objetos contidos em 'itens': </b>
+			    			adquirido (boolean), aprovado (boolean), nome (string), unidade (string), quantidade (number), valorUnitario (number), valorTotal (number), catmat_catser (string)
+			    		</p>
+			    		<p><b>atributos dos objetos contidos em 'empenhos': </b>
+			    			numero (int), fornecedor (ObjectId), valor (number), itens (array de ObjectIds)
+			    		</p>
+			    		<p><b>atributos dos objetos contidos em 'pagamentos': </b>
+			    			dataEnvioPagamento (date), dataPagamento (date), numeroOB (string), numNotaFiscal (string)
+			    		</p>
+					  </td>
 				  </tr>
 				  <tr>
 				    <td>DELETE aquisicao</td>
 				    <td><a href="">/aquisicoes/:aquisicao_id</a></td>
+				    <td>-</td>
 				  </tr>
 				</table>
 			</div>
@@ -207,6 +353,9 @@
 	table {
 		border-bottom: 2px solid black;
 		border-top: 2px solid black;
+	}
+	.atributos {
+		text-align: center;
 	}
 </style>
 </html>

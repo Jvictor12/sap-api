@@ -3,8 +3,8 @@ let router = require('express').Router();
 // Set default API response
 router.get('/', function (req, res) {
     res.json({
-        status: 'API Its Working',
-        message: 'Welcome to SAP API.',
+        status: 'API está funcionando!',
+        message: 'Bem-vindo à SAP API.',
     });
 });
 // Import controllers

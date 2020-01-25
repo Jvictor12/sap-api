@@ -75,6 +75,24 @@ exports.update = function (req, res) {
     });
 };
 
+exports.alterarListaNegra = function(req, res) {
+Fornecedor.findById(req.params.fornecedor_id,
+    function(err, fornecedor) {
+        if (err) res.send(err);
+
+        fornecedor.listaNegra = !fornecedor.listaNegra;
+
+        fornecedor.save(function (err) {
+            if (err)
+                res.json(err);
+            res.json({
+                message: 'Fornecedor info updated',
+                data: fornecedor
+            });
+        });
+    });
+}
+
 // Handle delete fornecedor
 exports.delete = function (req, res) {
     Fornecedor.deleteOne({_id: req.params.fornecedor_id}, 

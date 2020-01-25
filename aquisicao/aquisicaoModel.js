@@ -52,7 +52,7 @@ var aquisicaoSchema = mongoose.Schema({
             required: true
         }
     ],
-    itensSolicitados: [{
+    itens: [{
         nome: {
             type: String,
             required: true
@@ -61,6 +61,11 @@ var aquisicaoSchema = mongoose.Schema({
             type: Boolean,
             default: false,
             required: true
+        },
+        aprovado: {
+            type: Boolean,
+            default: false,
+            required: true,
         },
         unidade: {
             type: String,
@@ -84,43 +89,75 @@ var aquisicaoSchema = mongoose.Schema({
         }
     }],
     // dados primeira edicao - fornecedores vencedores e itens aprovados para fornecimento
-    // fornecedoresVencedores: [
-    //     {
-    //         type: mongoose.Schema.Types.ObjectId,
-    //         ref: 'fornecedor',
-    //         required: true
-    //     }
-    // ],
-    // itensAprovados: [{
-    //     nome: {
-    //         type: String,
-    //         required: true
-    //     },
-    //     adquirido: {
-    //         type: Boolean,
-    //         required: true
-    //     },
-    //     unidade: {
-    //         type: String,
-    //         required: true
-    //     },
-    //     quantidade: {
-    //         type: Number,
-    //         required: true
-    //     },
-    //     valorUnitario: {
-    //         type: Number,
-    //         required: true
-    //     },
-    //     valorTotal: {
-    //         type: Number,
-    //         required: true
-    //     },
-    //     catmat_catser: {
-    //         type: String,
-    //         required: true
-    //     }
-    // }],
+    fornecedoresVencedores: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'fornecedor',
+            required: true
+        }
+    ],
+    empenhos: [
+    	{
+        numero: {
+            type: Number,
+            required: true,
+        },
+        fornecedor: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'fornecedor',
+            required: true
+        },
+        valor: {
+            type: Number,
+            required: true,
+        },
+        create_date: {
+          type: Date,
+          default: Date.now
+        },
+        dataEnvio: {
+        	type: Date,
+      	},
+      	enviado: {
+	        type: Boolean,
+  	      required: true,
+    	    default: false,
+      	},
+      	recebido: {
+        	type: Boolean,
+	        required: true,
+  	      default: false,
+    	  },
+      	dataRecebimento: {
+	        type: Date,
+  	    },
+    	  itens: [
+      	  {
+            type: String,
+            required: true,
+        	},
+      	],
+      }
+    ],
+	  dataEntregaItens: {
+	  	type: Date,
+	  },
+	  pagamentos: [
+	  	{
+	  		dataEnvioPagamento: {
+	  			type: Date,
+	  		},
+	  		dataPagamento: {
+	  			type: Date,
+	  		},
+	  		numeroOB: {
+	  			type: String,
+	  		},
+	  		numNotaFiscal: {
+	  			type: String,
+	  		}
+	  	}
+	  ]
 });
 
 // Export Aquisicao model

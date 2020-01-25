@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
 mongoose.connect('mongodb+srv://iago:u98eZ.yYXDjVt@N@iago-wade7.mongodb.net/test?retryWrites=true&w=majority', 
-	{dbName: 'sap', useNewUrlParser: true})
+	{dbName: 'sap', useNewUrlParser: true, useUnifiedTopology: true})
 	.catch(error => console.log(error));
 var db = mongoose.connection;
 

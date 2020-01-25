@@ -1,10 +1,4 @@
-criar rotas específicas para cada etapa da aquisicao
-
-cadastros e updates com json
-
-add rota para update geral de aquisições
-
-
+// aquisicao
 {
 	"numAquisicao": "01/20",
 	"etapa": 1,
@@ -19,7 +13,7 @@ add rota para update geral de aquisições
 		{"_id": "5de6768eb5580a0c0f239555"},
 		{"_id": "5e2a494e15267a2edcc0a9be"}
 	],
-	"itensSolicitados": [
+	"itens": [
 		{
 			"nome": "lápis",
 			"unidade": "unidade",
@@ -37,4 +31,24 @@ add rota para update geral de aquisições
 			"catmat_catser": "catmat"
 		}
 	]
-}
+},
+// empenho
+{
+	"numero": 01,
+	"fornecedor": "5de6768eb5580a0c0f239555",
+	"valor": "400",
+	"itens": [
+		{
+			"_id": "5e2ba0a494a9702cefa0424a"
+		}
+	]
+},
+// pagamento
+[
+	{
+		"dataEnvioPagamento": "2020-01-25T01:58:26.908Z",
+		"dataPagamento": "2020-01-30T01:58:26.908Z",
+		"numeroOB": "12345",
+		"numNotaFiscal": "54321"
+	}
+]

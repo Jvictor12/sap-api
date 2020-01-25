@@ -48,6 +48,11 @@ router.route('/fornecedores/:fornecedor_id')
     .put(fornecedorController.update)
     .delete(fornecedorController.delete);
 
+// ROTA PARA ADD OU REMOVER FORNECEDOR DA LISTA NEGRA
+router.route('/fornecedores/alterar-lista-negra/:fornecedor_id')
+    .put(fornecedorController.alterarListaNegra)
+    .patch(fornecedorController.alterarListaNegra);
+
 // Rotas Aquisição
 router.route('/aquisicoes')
     .get(aquisicaoController.index)
@@ -55,9 +60,31 @@ router.route('/aquisicoes')
 
 router.route('/aquisicoes/:aquisicao_id')
     .get(aquisicaoController.view)
-    .patch(aquisicaoController.update)
-    .put(aquisicaoController.update)
+    .patch(aquisicaoController.updateGeral)
+    .put(aquisicaoController.updateGeral)
     .delete(aquisicaoController.delete);
+
+// rotas de atualização de etapas
+
+// ROTAS DE ATUALIZAÇÃO PARA INCLUSÃO DE FORNECEDORES VENCEDORES E ITENS APROVADOS
+router.route('/aquisicoes/add-aprovacao/:aquisicao_id')
+    .patch(aquisicaoController.updateAprovacao)
+    .put(aquisicaoController.updateAprovacao)
+
+// ROTAS DE ATUALIZAÇÃO PARA INCLUSÃO DE EMPENHO
+router.route('/aquisicoes/add-empenho/:aquisicao_id')
+    .patch(aquisicaoController.updateEmpenho)
+    .put(aquisicaoController.updateEmpenho)
+
+// ROTAS DE ATUALIZAÇÃO PARA INCLUSÃO DE RECEBIMENTO DE ITENS
+router.route('/aquisicoes/add-entrega/:aquisicao_id')
+    .patch(aquisicaoController.updateEntrega)
+    .put(aquisicaoController.updateEntrega)
+
+// ROTAS DE ATUALIZAÇÃO PARA INCLUSÃO DE PAGAMENTO
+router.route('/aquisicoes/add-pagamento/:aquisicao_id')
+    .patch(aquisicaoController.updatePagamento)
+    .put(aquisicaoController.updatePagamento)
     
 // Export API routes
 module.exports = router;

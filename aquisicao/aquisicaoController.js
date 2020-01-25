@@ -79,6 +79,7 @@ Aquisicao.findById(req.params.aquisicao_id,
         if (err) res.send(err);
 
         aquisicao.fornecedoresVencedores = req.body.fornecedoresVencedores;
+        aquisicao.etapa = 2;
         // mudar itens aprovados para true
         aquisicao.itens.filter(item => {
             req.body.itensAprovados.filter(itemAprov => {
@@ -108,6 +109,7 @@ Aquisicao.findById(req.params.aquisicao_id,
 
         // cadastrar empenhos e add na aquisicao
        aquisicao.empenhos = req.body;
+       aquisicao.etapa = 3;
         // console.log(req.body.empenhos)
         aquisicao.save(function(err) {
             if (err) res.json(err);
@@ -126,6 +128,7 @@ Aquisicao.findById(req.params.aquisicao_id,
     if (err) res.send(err);
 
     aquisicao.dataEntregaItens = req.body.dataEntregaItens;
+    aquisicao.etapa = 4;
 
     // mudar itens aprovados para true
     aquisicao.itens.filter(item => {
@@ -153,6 +156,7 @@ Aquisicao.findById(req.params.aquisicao_id,
     if (err) res.send(err);
 
     aquisicao.pagamentos = req.body;
+    aquisicao.etapa = 5;
 
     aquisicao.save(function(err) {
         if (err) res.json(err);

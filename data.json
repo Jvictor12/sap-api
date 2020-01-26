@@ -1,3 +1,8 @@
+TO-DO
+-mover api-key para arquivo .env
+-colocar numerações automáticas em empenho, aquisição
+
+
 // aquisicao
 {
 	"numAquisicao": "01/20",

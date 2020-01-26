@@ -73,7 +73,7 @@
 				    <td>
 				    	<p>status (string), message (string), data (array de objetos),</p>
 				    	<p>
-				    		<b>atributos dos objetos contidos em 'data':</b> _id (ObjectId, conversível para string), nome (string), email (string), ramal (number), sigla (string), create_date (date)
+				    		<b>atributos dos objetos contidos em 'data':</b> _id (string), nome (string), email (string), ramal (number), sigla (string), create_date (date)
 				    	</p>
 				    </td>
 				  </tr>
@@ -81,11 +81,11 @@
 				  <tr>
 				    <td>POST setor</td>
 				    <td><a href="">/setores</a></td>
-				    <td>nome (string), email (string), ramal (string), sigla (string)</td>
+				    <td>nome (string), email (string), ramal (number), sigla (string)</td>
 				    <td>
 				    	<p>status (string), message (string), data (array de objetos),</p>
 				    	<p>
-				    		<b>atributos dos objetos contidos em 'data':</b> _id (ObjectId, conversível para string), nome (string), email (string), ramal (number), sigla (string), create_date (date)
+				    		<b>atributos dos objetos contidos em 'data':</b> _id (string), nome (string), email (string), ramal (number), sigla (string), create_date (date)
 				    	</p>
 				    </td>
 				  </tr>
@@ -98,7 +98,7 @@
 				    <td>
 				    	<p>message (string), data (objeto)</p>
 				    	<p><b>atributos do objeto 'data':</b>
-				    		_id (ObjectId, conversível para string), nome (string), email (string), ramal (number), sigla (string), create_date (date)
+				    		_id (string), nome (string), email (string), ramal (number), sigla (string), create_date (date)
 				    	</p>
 				    </td>
 				  </tr>
@@ -106,11 +106,11 @@
 				  <tr>
 				    <td>PUT setor</td>
 				    <td><a href="">/setores/:setor_id</a></td>
-				    <td>nome (string), email (string), ramal (string), sigla (string)</td>
+				    <td>nome (string), email (string), ramal (number), sigla (string)</td>
 				    <td>
 				    	<p>message (string), data (objeto)</p>
 				    	<p><b>atributos do objeto 'data':</b>
-				    		_id (ObjectId, conversível para string), nome (string), email (string), ramal (number), sigla (string), create_date (date)
+				    		_id (string), nome (string), email (string), ramal (number), sigla (string), create_date (date)
 				    	</p>
 				    </td>
 				  </tr>
@@ -121,7 +121,7 @@
 				    <td>
 				    	<p>message (string), data (objeto)</p>
 				    	<p><b>atributos do objeto 'data':</b>
-				    		_id (ObjectId, conversível para string), nome (string), email (string), ramal (number), sigla (string), create_date (date)
+				    		_id (string), nome (string), email (string), ramal (number), sigla (string), create_date (date)
 				    	</p>
 				    </td>
 				  </tr>
@@ -155,22 +155,21 @@
 				    <td>
 				    	<p>status (string), message (string), data (array de objetos),</p>
 				    	<p>
-				    		<b>atributos dos objetos contidos em 'data':</b> _id (ObjectId, conversível para string), nome (string),
-				    		setor (ObjectId), email (string), cargo (string), celular (string), create_date (date)
+				    		<b>atributos dos objetos contidos em 'data':</b> _id (string), nome (string),
+				    		setor (string), email (string), cargo (string), celular (string), create_date (date)
 				    	</p>
-				    </td>
 				  </tr>
 				  <tr>
 				    <td>POST servidor</td>
 				    <td><a href="">/servidores</a></td>
 				    <td>
-				    		nome (string), setor (ObjectId), email (string), cargo (string), celular (string)
+				    		nome (string), setor (string), email (string), cargo (string), celular (string)
 				    </td>
 				    <td>
 				    	<p>status (string), message (string), data (array de objetos),</p>
 				    	<p>
-				    		<b>atributos dos objetos contidos em 'data':</b> _id (ObjectId, conversível para string), nome (string),
-				    		setor (ObjectId), email (string), cargo (string), celular (string), create_date (date)
+				    		<b>atributos dos objetos contidos em 'data':</b> _id (string), nome (string),
+				    		setor (string), email (string), cargo (string), celular (string), create_date (date)
 				    	</p>
 				    </td>
 				  </tr>
@@ -182,20 +181,24 @@
 				    <td>
 				    	<p>message (string), data (objeto)</p>
 				    	<p><b>atributos do objeto 'data':</b>
-				    		_id (ObjectId), nome (string), setor (ObjectId), email (string), cargo (string), celular (string), create_date (date)
+				    		_id (string), nome (string), setor (objeto setor), email (string), cargo (string), celular (string), create_date (date)
 				    	</p>
+				    	<p><b>atributos do objeto 'setor':</b>
+				    		_id (string), nome (string), email (string), ramal (number), sigla (string), create_date (date)
+				    	</p>
+				    </td>
 				    </td>
 				  </tr>
 				  <tr>
 				    <td>PUT servidor</td>
 				    <td><a href="">/servidores/:servidor_id</a></td>
 				    <td>
-				    		nome (string), setor (ObjectId), email (string), cargo (string), celular (string)
+				    		nome (string), setor (string), email (string), cargo (string), celular (string)
 				    </td>
 				    <td>
 				    	<p>message (string), data (objeto)</p>
 				    	<p><b>atributos do objeto 'data':</b>
-				    		_id (ObjectId), nome (string), setor (ObjectId), email (string), cargo (string), celular (string), create_date (date)
+				    		_id (string), nome (string), setor (string), email (string), cargo (string), celular (string), create_date (date)
 				    	</p>
 				    </td>
 				  </tr>
@@ -203,12 +206,12 @@
 				    <td>PATCH servidor</td>
 				    <td><a href="">/servidores/:servidor_id</a></td>
 				    <td>
-				    		nome (string), setor (ObjectId), email (string), cargo (string), celular (string)
+				    		nome (string), setor (string), email (string), cargo (string), celular (string)
 				    </td>
 				    <td>
 				    	<p>message (string), data (objeto)</p>
 				    	<p><b>atributos do objeto 'data':</b>
-				    		_id (ObjectId), nome (string), setor (ObjectId), email (string), cargo (string), celular (string), create_date (date)
+				    		_id (string), nome (string), setor (string), email (string), cargo (string), celular (string), create_date (date)
 				    	</p>
 				    </td>
 				  </tr>
@@ -242,7 +245,7 @@
 				    <td>
 				    	<p>status (string), message (string), data (array de objetos),</p>
 				    	<p>
-				    		<b>atributos dos objetos contidos em 'data':</b> _id (ObjectId, conversível para string), listaNegra (boolean), create_date (date), razaoSocial (string), nomeFantasia (string), cnpj (string), cidadeEstado (string), telefone (string), email (string), responsavel (string)
+				    		<b>atributos dos objetos contidos em 'data':</b> _id (string), listaNegra (boolean), create_date (date), razaoSocial (string), nomeFantasia (string), cnpj (string), cidadeEstado (string), telefone (string), email (string), responsavel (string)
 				    	</p>
 				    </td>
 				  </tr>
@@ -255,7 +258,7 @@
 				    <td>
 				    	<p>status (string), message (string), data (array de objetos),</p>
 				    	<p>
-				    		<b>atributos dos objetos contidos em 'data':</b> _id (ObjectId, conversível para string), listaNegra (boolean), create_date (date), razaoSocial (string), nomeFantasia (string), cnpj (string), cidadeEstado (string), telefone (string), email (string), responsavel (string)
+				    		<b>atributos dos objetos contidos em 'data':</b> _id (string), listaNegra (boolean), create_date (date), razaoSocial (string), nomeFantasia (string), cnpj (string), cidadeEstado (string), telefone (string), email (string), responsavel (string)
 				    	</p>
 				    </td>
 				  </tr>
@@ -268,7 +271,7 @@
 				    	<p>message (string), data (objeto),</p>
 				    	<p>
 				    		<b>atributos do objeto 'data':</b> 
-				    		_id (ObjectId, conversível para string), listaNegra (boolean), create_date (date), razaoSocial (string), nomeFantasia (string), cnpj (string), cidadeEstado (string), telefone (string), email (string), responsavel (string)
+				    		_id (string), listaNegra (boolean), create_date (date), razaoSocial (string), nomeFantasia (string), cnpj (string), cidadeEstado (string), telefone (string), email (string), responsavel (string)
 				    	</p>
 				    </td>
 				  </tr>
@@ -282,7 +285,7 @@
 				    	<p>message (string), data (objeto),</p>
 				    	<p>
 				    		<b>atributos do objeto 'data':</b> 
-				    		_id (ObjectId, conversível para string), listaNegra (boolean), create_date (date), razaoSocial (string), nomeFantasia (string), cnpj (string), cidadeEstado (string), telefone (string), email (string), responsavel (string)
+				    		_id (string), listaNegra (boolean), create_date (date), razaoSocial (string), nomeFantasia (string), cnpj (string), cidadeEstado (string), telefone (string), email (string), responsavel (string)
 				    	</p>
 				    </td>
 				  </tr>
@@ -296,7 +299,7 @@
 				    	<p>message (string), data (objeto),</p>
 				    	<p>
 				    		<b>atributos do objeto 'data':</b> 
-				    		_id (ObjectId, conversível para string), listaNegra (boolean), create_date (date), razaoSocial (string), nomeFantasia (string), cnpj (string), cidadeEstado (string), telefone (string), email (string), responsavel (string)
+				    		_id (string), listaNegra (boolean), create_date (date), razaoSocial (string), nomeFantasia (string), cnpj (string), cidadeEstado (string), telefone (string), email (string), responsavel (string)
 				    	</p>
 				    </td>
 				  </tr>
@@ -338,27 +341,27 @@
 				    <td>
 				    	<p>status (string), message (string), data (array de objetos),</p>
 				    	<p>
-				    		<b>atributos dos objetos contidos em 'data':</b> _id (ObjectId, conversível para string), numAquisicao (string), etapa (number), solicitante (ObjectId), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), dataAbertura (date), dataEntregaItens (date), fornecedores (array de ObjectIds), fornecedoresVencedores (array de ObjectIds), itens (array de objetos), empenhos (array de objetos), pagamentos (array de objetos)
+				    		<b>atributos dos objetos contidos em 'data':</b> _id (string), numAquisicao (string), etapa (number), solicitante (string), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), dataAbertura (date), dataEntregaItens (date), fornecedores (array de ObjectIds), fornecedoresVencedores (array de ObjectIds), itens (array de objetos), empenhos (array de objetos), pagamentos (array de objetos)
 				    	</p>
 				    	<p><b>atributos dos objetos contidos em 'itens': </b>
-				    		_id (ObjectId), adquirido (boolean), aprovado (boolean), nome (string), unidade (string), quantidade (number), valorUnitario (number), valorTotal (number), catmat_catser (string)
+				    		_id (string), adquirido (boolean), aprovado (boolean), nome (string), unidade (string), quantidade (number), valorUnitario (number), valorTotal (number), catmat_catser (string)
 				    	</p>
-				    	<p><b>atributos dos objetos contidos em 'empenhos': </b>
-				    		_id (ObjectId), create_date (date), numero (int), fornecedor (ObjectId), valor (number), itens (array de ObjectIds)
+				    	<p><b>atributos dos objetos contidos em 'empenhos' (caso esteja acima da etapa 1): </b>
+				    		_id (string), create_date (date), numero (number), fornecedor (string), valor (number), itens (array de strings)
 				    	</p>
-				    	<p><b>atributos dos objetos contidos em 'pagamentos': </b>
-				    		_id (ObjectId), dataEnvioPagamento (date), dataPagamento (date), numeroOB (string), numNotaFiscal (string)
+				    	<p><b>atributos dos objetos contidos em 'pagamentos' (caso esteja na etapa 5): </b>
+				    		_id (string), dataEnvioPagamento (date), dataPagamento (date), numeroOB (string), numNotaFiscal (string)
 				    	</p>
 				    </td>
 				  </tr>
 				  <tr>
-				    <td>POST aquisicao</td>
+				    <td>POST aquisicao (etapa 1)</td>
 				    <td><a href="">/aquisicoes</a></td>
 				    <td>
-				    	<p>solicitante (ObjectId), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), fornecedores (array de objetos), itens (array de objetos)
+				    	<p>solicitante (string), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), fornecedores (array de objetos), itens (array de objetos)
 				    	</p>
 				    	<p><b>atributos dos objetos contidos em 'fornecedores': </b>
-				    		_id (ObjectId)</p>
+				    		_id (string)</p>
 				    	<p><b>atributos dos objetos contidos em 'itens': </b>
 				    		nome (string), unidade (string), quantidade (number), valorUnitario (number), valorTotal(number), catmat_catser (string)
 				    	</p>
@@ -366,16 +369,10 @@
 				    <td>
 				    	<p>status (string), message (string), data (array de objetos),</p>
 				    	<p>
-				    		<b>atributos dos objetos contidos em 'data':</b> _id (ObjectId, conversível para string), numAquisicao (string), etapa (number), solicitante (ObjectId), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), dataAbertura (date), dataEntregaItens (date), fornecedores (array de ObjectIds), fornecedoresVencedores (array de ObjectIds), itens (array de objetos), empenhos (array de objetos), pagamentos (array de objetos)
+				    		<b>atributos dos objetos contidos em 'data':</b> _id (string), numAquisicao (string), etapa (number), solicitante (string), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), dataAbertura (date), dataEntregaItens (date), fornecedores (array de strings), itens (array de itens), empenhos (array vazio), pagamentos (array vazio)
 				    	</p>
 				    	<p><b>atributos dos objetos contidos em 'itens': </b>
-				    		_id (ObjectId), adquirido (boolean), aprovado (boolean), nome (string), unidade (string), quantidade (number), valorUnitario (number), valorTotal (number), catmat_catser (string)
-				    	</p>
-				    	<p><b>atributos dos objetos contidos em 'empenhos': </b>
-				    		_id (ObjectId), create_date (date), numero (int), fornecedor (ObjectId), valor (number), itens (array de ObjectIds)
-				    	</p>
-				    	<p><b>atributos dos objetos contidos em 'pagamentos': </b>
-				    		_id (ObjectId), dataEnvioPagamento (date), dataPagamento (date), numeroOB (string), numNotaFiscal (string)
+				    		_id (string), adquirido (boolean), aprovado (boolean), nome (string), unidade (string), quantidade (number), valorUnitario (number), valorTotal (number), catmat_catser (string)
 				    	</p>
 				    </td>
 				  </tr>
@@ -387,16 +384,16 @@
 				    <td>
 				    	<p>message (string), data (objeto)</p>
 				    		<p><b>atributos do objeto 'data':</b>
-					    		_id (ObjectId, conversível para string), numAquisicao (string), etapa (number), solicitante (ObjectId), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), dataAbertura (date), dataEntregaItens (date), fornecedores (array de ObjectIds), fornecedoresVencedores (array de ObjectIds), itens (array de objetos), empenhos (array de objetos), pagamentos (array de objetos)
+					    		_id (string), numAquisicao (string), etapa (number), solicitante (string), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), dataAbertura (date), dataEntregaItens (date, caso esteja na etapa 4 ou 5), fornecedores (array de strings), fornecedoresVencedores (array de strings, caso esteja na etapa 3 ou acima, ou array vazio), itens (array de objetos), empenhos (array de objetos caso esteja acima da etapa 2, ou array vazio), pagamentos (array de objetos,caso esteja acima da etapa 4, ou array vazio)
 					    	</p>
 					    	<p><b>atributos dos objetos contidos em 'itens': </b>
-				    			_id (ObjectId), adquirido (boolean), aprovado (boolean), nome (string), unidade (string), quantidade (number), valorUnitario (number), valorTotal (number), catmat_catser (string)
+				    			_id (string), adquirido (boolean), aprovado (boolean), nome (string), unidade (string), quantidade (number), valorUnitario (number), valorTotal (number), catmat_catser (string)
 				    		</p>
 				    		<p><b>atributos dos objetos contidos em 'empenhos': </b>
-				    			_id (ObjectId), create_date (date), numero (int), fornecedor (ObjectId), valor (number), itens (array de ObjectIds)
+				    			_id (string), create_date (date), numero (int), fornecedor (string), valor (number), itens (array de strings)
 				    		</p>
 				    		<p><b>atributos dos objetos contidos em 'pagamentos': </b>
-				    			_id (ObjectId), dataEnvioPagamento (date), dataPagamento (date), numeroOB (string), numNotaFiscal (string)
+				    			_id (string), dataEnvioPagamento (date), dataPagamento (date), numeroOB (string), numNotaFiscal (string)
 				    		</p>
 					  </td>
 				  </tr>
@@ -405,30 +402,30 @@
 				    <td><a href="">/aquisicoes/:aquisicao_id</a></td>
 				    <td>
 			    		<p>
-				    		solicitante (ObjectId), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), dataAbertura (date), dataEntregaItens (date), fornecedores (array de ObjectIds), fornecedoresVencedores (array de ObjectIds), itens (array de objetos), empenhos (array de objetos), pagamentos (array de objetos)
+				    		solicitante (string), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), dataAbertura (date), dataEntregaItens (date), fornecedores (array de string), fornecedoresVencedores (array de string), itens (array de objetos), empenhos (array de objetos), pagamentos (array de objetos)
 				    	</p>
 				    	<p><b>atributos dos objetos contidos em 'itens': </b>
 			    			adquirido (boolean), aprovado (boolean), nome (string), unidade (string), quantidade (number), valorUnitario (number), valorTotal (number), catmat_catser (string)
 			    		</p>
-			    		<p><b>atributos dos objetos contidos em 'empenhos': </b>
-			    			numero (int), fornecedor (ObjectId), valor (number), itens (array de ObjectIds)
+			    		<p><b>atributos dos objetos contidos em 'empenhos': (caso já esteja acima da etapa 1)</b>
+			    			numero (int), fornecedor (string), valor (number), itens (array de strings)
 			    		</p>
-			    		<p><b>atributos dos objetos contidos em 'pagamentos': </b>
+			    		<p><b>atributos dos objetos contidos em 'pagamentos': (caso já esteja na etapa 5)</b>
 			    			dataEnvioPagamento (date), dataPagamento (date), numeroOB (string), numNotaFiscal (string)
 			    		</p>
 					  </td>
 					  <td>
 				    	<p>status (string), message (string), data (array de objetos),</p>
 				    	<p>
-				    		<b>atributos dos objetos contidos em 'data':</b> _id (ObjectId, conversível para string), numAquisicao (string), etapa (number), solicitante (ObjectId), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), dataAbertura (date), dataEntregaItens (date), fornecedores (array de ObjectIds), fornecedoresVencedores (array de ObjectIds), itens (array de objetos), empenhos (array de objetos), pagamentos (array de objetos)
+				    		<b>atributos dos objetos contidos em 'data':</b> _id (string), numAquisicao (string), etapa (number), solicitante (string), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), dataAbertura (date), dataEntregaItens (date), fornecedores (array de strings), fornecedoresVencedores (array de strings), itens (array de objetos), empenhos (array de objetos), pagamentos (array de objetos)
 				    	</p>
 				    	<p><b>atributos dos objetos contidos em 'itens': </b>
-				    		_id (ObjectId), adquirido (boolean), aprovado (boolean), nome (string), unidade (string), quantidade (number), valorUnitario (number), valorTotal (number), catmat_catser (string)
+				    		_id (string), adquirido (boolean), aprovado (boolean), nome (string), unidade (string), quantidade (number), valorUnitario (number), valorTotal (number), catmat_catser (string)
 				    	</p>
-				    	<p><b>atributos dos objetos contidos em 'empenhos': </b>
-				    		_id (ObjectId), create_date (date), numero (int), fornecedor (ObjectId), valor (number), itens (array de ObjectIds)
+				    	<p><b>atributos dos objetos contidos em 'empenhos': (caso já esteja acima da etapa 1)</b>
+				    		_id (string), create_date (date), numero (number), fornecedor (ObjectId), valor (number), itens (array de strings)
 				    	</p>
-				    	<p><b>atributos dos objetos contidos em 'pagamentos': </b>
+				    	<p><b>atributos dos objetos contidos em 'pagamentos': (caso já esteja na etapa 5)</b>
 				    		_id (ObjectId), dataEnvioPagamento (date), dataPagamento (date), numeroOB (string), numNotaFiscal (string)
 				    	</p>
 				    </td>
@@ -438,30 +435,30 @@
 				    <td><a href="">/aquisicoes/:aquisicao_id</a></td>
 				    <td>
 			    		<p>
-				    		etapa (number), solicitante (ObjectId), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), dataAbertura (date), dataEntregaItens (date), fornecedores (array de ObjectIds), fornecedoresVencedores (array de ObjectIds), itens (array de objetos), empenhos (array de objetos), pagamentos (array de objetos)
+				    		solicitante (string), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), dataAbertura (date), dataEntregaItens (date), fornecedores (array de string), fornecedoresVencedores (array de string), itens (array de objetos), empenhos (array de objetos), pagamentos (array de objetos)
 				    	</p>
 				    	<p><b>atributos dos objetos contidos em 'itens': </b>
 			    			adquirido (boolean), aprovado (boolean), nome (string), unidade (string), quantidade (number), valorUnitario (number), valorTotal (number), catmat_catser (string)
 			    		</p>
-			    		<p><b>atributos dos objetos contidos em 'empenhos': </b>
-			    			numero (int), fornecedor (ObjectId), valor (number), itens (array de ObjectIds)
+			    		<p><b>atributos dos objetos contidos em 'empenhos': (caso já esteja acima da etapa 1)</b>
+			    			numero (int), fornecedor (string), valor (number), itens (array de strings)
 			    		</p>
-			    		<p><b>atributos dos objetos contidos em 'pagamentos': </b>
+			    		<p><b>atributos dos objetos contidos em 'pagamentos': (caso já esteja na etapa 5)</b>
 			    			dataEnvioPagamento (date), dataPagamento (date), numeroOB (string), numNotaFiscal (string)
 			    		</p>
 					  </td>
 					  <td>
 				    	<p>status (string), message (string), data (array de objetos),</p>
 				    	<p>
-				    		<b>atributos dos objetos contidos em 'data':</b> _id (ObjectId, conversível para string), numAquisicao (string), etapa (number), solicitante (ObjectId), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), dataAbertura (date), dataEntregaItens (date), fornecedores (array de ObjectIds), fornecedoresVencedores (array de ObjectIds), itens (array de objetos), empenhos (array de objetos), pagamentos (array de objetos)
+				    		<b>atributos dos objetos contidos em 'data':</b> _id (string), numAquisicao (string), etapa (number), solicitante (string), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), dataAbertura (date), dataEntregaItens (date), fornecedores (array de strings), fornecedoresVencedores (array de strings), itens (array de objetos), empenhos (array de objetos), pagamentos (array de objetos)
 				    	</p>
 				    	<p><b>atributos dos objetos contidos em 'itens': </b>
-				    		_id (ObjectId), adquirido (boolean), aprovado (boolean), nome (string), unidade (string), quantidade (number), valorUnitario (number), valorTotal (number), catmat_catser (string)
+				    		_id (string), adquirido (boolean), aprovado (boolean), nome (string), unidade (string), quantidade (number), valorUnitario (number), valorTotal (number), catmat_catser (string)
 				    	</p>
-				    	<p><b>atributos dos objetos contidos em 'empenhos': </b>
-				    		_id (ObjectId), create_date (date), numero (int), fornecedor (ObjectId), valor (number), itens (array de ObjectIds)
+				    	<p><b>atributos dos objetos contidos em 'empenhos': (caso já esteja acima da etapa 1)</b>
+				    		_id (string), create_date (date), numero (number), fornecedor (ObjectId), valor (number), itens (array de strings)
 				    	</p>
-				    	<p><b>atributos dos objetos contidos em 'pagamentos': </b>
+				    	<p><b>atributos dos objetos contidos em 'pagamentos': (caso já esteja na etapa 5)</b>
 				    		_id (ObjectId), dataEnvioPagamento (date), dataPagamento (date), numeroOB (string), numNotaFiscal (string)
 				    	</p>
 				    </td>
@@ -471,6 +468,82 @@
 				    <td><a href="">/aquisicoes/:aquisicao_id</a></td>
 				    <td>-</td>
 				    <td>status (string), message (string)</td>
+				  </tr>
+				  <tr>
+				  	<td>PUT aquisicao (update para etapa 2)</td>
+				  	<td><a href="">/aquisicoes/add-aprovacao/:aquisicao_id</a></td>
+				  	<td>fornecedoresVencedores (array de strings), itensAprovados (array de strings)</td>
+				  	<td>
+				    	<p>message (string), data (array de objetos),</p>
+				    	<p>
+				    		<b>atributos dos objetos contidos em 'data':</b> _id (string), numAquisicao (string), etapa (number), solicitante (string), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), dataAbertura (date), fornecedores (array de strings), fornecedoresVencedores (array de strings), itens (array de objetos)
+				    	</p>
+				    	<p><b>atributos dos objetos contidos em 'itens': </b>
+				    		_id (string), adquirido (boolean), aprovado (boolean), nome (string), unidade (string), quantidade (number), valorUnitario (number), valorTotal (number), catmat_catser (string)
+				    	</p>
+				    </td>
+				  </tr>
+				  <tr>
+				  	<td>PUT aquisicao (update para etapa 3)</td>
+				  	<td><a href="">/aquisicoes/add-empenho/:aquisicao_id</a></td>
+				  	<td>
+				  		<p>empenhos (array de empenhos)</p>
+				  		<p><b>atributos contidos no objeto empenho:</b> fornecedor (string), valor (number), itens (array de strings)</p>
+				  	</td>
+				  	<td>
+				    	<p>status (string), message (string), data (array de objetos),</p>
+				    	<p>
+				    		<b>atributos dos objetos contidos em 'data':</b> _id (string), numAquisicao (string), etapa (number), solicitante (string), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), dataAbertura (date), dataEntregaItens (date), fornecedores (array de strings), fornecedoresVencedores (array de strings), itens (array de objetos), empenhos (array de objetos)
+				    	</p>
+				    	<p><b>atributos dos objetos contidos em 'itens': </b>
+				    		_id (string), adquirido (boolean), aprovado (boolean), nome (string), unidade (string), quantidade (number), valorUnitario (number), valorTotal (number), catmat_catser (string)
+				    	</p>
+				    	<p><b>atributos dos objetos contidos em 'empenhos': </b>
+				    		_id (string), create_date (date), numero (int), fornecedor (string), valor (number), itens (array de strings)
+				    	</p>
+				    </td>
+				  </tr>
+				  <tr>
+				  	<td>PUT aquisicao (update para etapa 4)</td>
+				  	<td><a href="">/aquisicoes/add-entrega/:aquisicao_id</a></td>
+				  	<td>
+				  		<p>dataEntregaItens (date), itensAdquiridos (array de strings (id dos itens entregues))</p>
+				  	</td>
+				  	<td>
+				    	<p>status (string), message (string), data (array de objetos),</p>
+				    	<p>
+				    		<b>atributos dos objetos contidos em 'data':</b> _id (string), numAquisicao (string), etapa (number), solicitante (string), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), dataAbertura (date), dataEntregaItens (date), fornecedores (array de strings), fornecedoresVencedores (array de strings), itens (array de objetos), empenhos (array de objetos), dataEntregaItens (date)
+				    	</p>
+				    	<p><b>atributos dos objetos contidos em 'itens': </b>
+				    		_id (string), adquirido (boolean), aprovado (boolean), nome (string), unidade (string), quantidade (number), valorUnitario (number), valorTotal (number), catmat_catser (string)
+				    	</p>
+				    	<p><b>atributos dos objetos contidos em 'empenhos': </b>
+				    		_id (string), create_date (date), numero (int), fornecedor (string), valor (number), itens (array de ObjectIds)
+				    	</p>
+				    </td>
+				  </tr>
+				  <tr>
+				  	<td>PUT aquisicao (update para etapa 5)</td>
+				  	<td><a href="">/aquisicoes/add-pagamento/:aquisicao_id</a></td>
+				  	<td>
+				  		<p>pagamentos (array de pagamento)</p>
+				  		<p><b>atributos contidos no objeto pagamento:</b> dataEnvioPagamento (date), dataPagamento (date), numeroOB (string), numNotaFiscal (string)</p>
+				  	</td>
+				  	<td>
+				    	<p>status (string), message (string), data (array de objetos),</p>
+				    	<p>
+				    		<b>atributos dos objetos contidos em 'data':</b> _id (string), numAquisicao (string), etapa (number), solicitante (string), nProcessoSEI (string), objeto (string), modalidade (string), valorTotal (number), tipo (string), orcamento (string), dataAbertura (date), dataEntregaItens (date), fornecedores (array de strings), fornecedoresVencedores (array de strings (id dos fornecedores)), itens (array de objetos), empenhos (array de objetos), dataEntregaItens (date), pagamentos (array de pagamentos)
+				    	</p>
+				    	<p><b>atributos dos objetos contidos em 'itens': </b>
+				    		_id (string), adquirido (boolean), aprovado (boolean), nome (string), unidade (string), quantidade (number), valorUnitario (number), valorTotal (number), catmat_catser (string)
+				    	</p>
+				    	<p><b>atributos dos objetos contidos em 'empenhos': </b>
+				    		_id (string), create_date (date), numero (int), fornecedor (string), valor (number), itens (array de ObjectIds)
+				    	</p>
+				    	<p><b>atributos dos objetos contidos em 'pagamentos': </b>
+				    		_id (string), dataEnvioPagamento (date), dataPagamento (date), numeroOB (string), numNotaFiscal (string)
+				    	</p>
+				    </td>
 				  </tr>
 				</table>
 			</div>

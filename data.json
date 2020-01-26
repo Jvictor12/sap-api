@@ -1,6 +1,6 @@
 TO-DO
 -mover api-key para arquivo .env
--colocar numerações automáticas em empenho, aquisição
+-colocar numerações automáticas em empenho e aquisição
 
 
 // aquisicao
@@ -39,7 +39,7 @@ TO-DO
 },
 // empenho
 {
-	"numero": 01,
+	"numero": 1,
 	"fornecedor": "5de6768eb5580a0c0f239555",
 	"valor": "400",
 	"itens": [
@@ -57,3 +57,28 @@ TO-DO
 		"numNotaFiscal": "54321"
 	}
 ]
+// setor
+{
+	"nome": "Direção Geral",
+	"email": "dg@ifba.com",
+	"ramal": 25,
+	"sigla": "DG"
+}
+//servidor
+{
+	"nome": "Funcionario Nunes",
+	"setor": "5e2b4bd53ef57b387d24566d",
+	"email": "nunes@ifba.com",
+	"cargo": "Supervisor",
+	"celular": "88095782"
+}
+//  fornecedor
+{
+	"razaoSocial": "Razao",
+	"nomeFantasia": "Empresa Racional",
+	"cidadeEstado": "São Paulo - SP",
+	"telefone": "3490-8583",
+	"email": "empresapensante@hotmail.com",
+	"cnpj": "95.493.505/4938",
+	"responsavel": "João Carlos"
+}

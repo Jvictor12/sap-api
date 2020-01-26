@@ -61,7 +61,6 @@ exports.update = function (req, res) {
             fornecedor.telefone = req.body.telefone;
             fornecedor.email = req.body.email;
             fornecedor.responsavel = req.body.responsavel;
-            fornecedor.listaNegra = req.body.listaNegra;
 
             // save the fornecedor and check for errors
             fornecedor.save(function (err) {

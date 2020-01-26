@@ -18,7 +18,7 @@ exports.index = function (req, res) {
 
 exports.new = function (req, res) {
     var aquisicao = new Aquisicao(req.body);
-    
+    aquisicao.etapa = 1;
     aquisicao.save(function (err) {
         if (err)
             res.json(err);
@@ -83,7 +83,7 @@ Aquisicao.findById(req.params.aquisicao_id,
         // mudar itens aprovados para true
         aquisicao.itens.filter(item => {
             req.body.itensAprovados.filter(itemAprov => {
-                if (item._id.toString() === itemAprov._id) {
+                if (item._id.toString() === itemAprov.toString()) {
                     item.aprovado = true;
                 }
             })
@@ -133,7 +133,7 @@ Aquisicao.findById(req.params.aquisicao_id,
     // mudar itens aprovados para true
     aquisicao.itens.filter(item => {
       req.body.itensAdquiridos.filter(itemAdquirido => {
-        if (item._id.toString() === itemAdquirido._id) {
+        if (item._id.toString() === itemAdquirido.toString()) {
           item.adquirido = true;
         }
       })
